@@ -1,7 +1,7 @@
 def grading(time, perc, multi, tf):
     grade = 0
-    correct_multi = ['A', 'C', 'A', 'D', 'B', 'B', 'B', 'A', 'B', 'B', 'B', 'B', 'A', 'D', 'B']
-    correct_tf = ['T', 'F', 'F', 'F', 'T', 'T', 'T', 'F', 'T', 'T', 'F', 'T', 'T', 'F', 'F']
+    correct_multi = ['A', 'C', 'A', 'D', 'B', 'B', 'B', 'A', 'B', 'B', 'B', 'B', 'B', 'A', 'A']
+    correct_tf = ['T', 'F', 'T', 'T', 'F', 'T', 'T', 'F', 'F', 'F', 'T', 'F', 'F', 'F', 'T']
 
     for i in range(len(multi)):
         if multi[i] == correct_multi[i]:
@@ -15,10 +15,10 @@ def grading(time, perc, multi, tf):
             print(f"Question TF {i+1}'s correct answer is {correct_tf[i]}")
 
 
-    if time <= 9:
+    if time <= 15:
         grade += 20
-    elif time > 9:
-        grade += (20-(time-10))
+    elif time > 15 and time <= 35:
+        grade += (20-(time-15))
 
     if perc >= 95:
         grade += 20
@@ -27,4 +27,5 @@ def grading(time, perc, multi, tf):
     
     return grade
 
-print(grading(8, 96, ['B', 'C', 'C', 'D', 'A', 'B', 'B', 'D', 'B', 'B', 'B', 'B', 'A', 'D', 'B'], ['T', 'F', 'F', 'T', 'T', 'T', 'T', 'F', 'T', 'T', 'F', 'T', 'T', 'F', 'F']))
+print(grading(50, 98, ['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'A', 'B', 'C'], ['T', 'F', 'T', 'F', 'T', 'F', 'T', 'F', 'T', 'F', 'T', 'F', 'T', 'F', 'T']))
+
